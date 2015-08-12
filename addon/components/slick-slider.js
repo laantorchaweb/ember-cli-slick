@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import layout from '../templates/components/ember-cli-slick';
+import layout from '../templates/components/slick-slider';
 
 export default Ember.Component.extend({
   layout: layout,
