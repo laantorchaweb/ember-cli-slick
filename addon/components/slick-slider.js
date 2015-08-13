@@ -28,7 +28,7 @@ export default Ember.Component.extend({
   pauseOnHover: true,
   pauseOnDotsHover: false,
   respondTo: 'window',
-  responsive: {},
+  responsive: [],
   rows: 1,
   slide: '',
   slidesPerRow: 1,
@@ -90,7 +90,8 @@ export default Ember.Component.extend({
       variableWidth    : this.get('variableWidth'),
       vertical         : this.get('vertical'),
       verticalSwiping  : this.get('verticalSwiping'),
-      rtl              : this.get('rtl')
+      rtl              : this.get('rtl'),
+      responsive       : this.get('responsive')
     })
     .on('afterChange', function (slick, currentSlide) {
       _this.sendAction('afterChange', slick, currentSlide);
