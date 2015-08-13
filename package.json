@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-slick",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "1.0.1",
+  "description": "Slick Slider addon for Ember CLI.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -38,7 +38,11 @@
     "ember-try": "0.0.6"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "slick",
+    "slider",
+    "carousel",
+    "responsive"
   ],
   "dependencies": {
     "ember-cli-htmlbars": "0.7.9",
