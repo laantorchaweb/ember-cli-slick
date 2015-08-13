@@ -12,6 +12,6 @@ module.exports = {
   included: function(app) {
     this._super.included(app);
     this.app.import(app.bowerDirectory + '/slick-carousel/slick/slick.css');
-    this.app.import(app.bowerDirectory + '/slick-carousel/slick/slick.js');
+    this.app.import(app.bowerDirectory + '/slick-carousel/slick/slick.min.js');
   }
 };

@@ -14,7 +14,6 @@ export default Ember.Component.extend({
   centerMode: false,
   centerPadding: '50px',
   cssEase: 'ease',
-  customPaging: null,
   dots: false,
   draggable: true,
   fade: false,
@@ -48,7 +47,7 @@ export default Ember.Component.extend({
   _initializeSlick: Ember.on('didInsertElement', function() {
     var _this = this;
 
-    return this.$().slick({
+    return this.$().slick({   
       accessibility    : this.get('accessibility'),
       adaptativeHeight : this.get('adaptativeHeight'),
       autoplay         : this.get('autoplay'),
