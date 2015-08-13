@@ -1,7 +1,31 @@
-# Ember-cli-slick
+# ember-cli-slick
 
-This README outlines the details of collaborating on this Ember addon.
+`ember-cli-slick` is a component that wraps the Slick Slider plugin functionality.
 
+### Installation
+
+From inside your ember-cli project, run the following:
+
+```bash
+ember install ember-cli-slick
+```
+
+#### Installation for ember-cli 0.1.5 - 0.2.2
+
+```bash
+ember install:addon ember-cli-slick
+```
+
+### slick-slider
+
+```hbs
+{{#slick-slider autoplay=true arrows=false}}
+  <div class="box"> <img src="https://static2.businessinsider.com/image/4f3433986bb3f7b67a00003c/a-parasite-found-in-cats-could-be-manipulating-our-brains.jpg"> </div>
+  <div class="box"> <img src="https://static2.businessinsider.com/image/4f3433986bb3f7b67a00003c/a-parasite-found-in-cats-could-be-manipulating-our-brains.jpg"> </div>
+  <div class="box"> <img src="https://static2.businessinsider.com/image/4f3433986bb3f7b67a00003c/a-parasite-found-in-cats-could-be-manipulating-our-brains.jpg"> </div>
+  <div class="box"> <img src="https://static2.businessinsider.com/image/4f3433986bb3f7b67a00003c/a-parasite-found-in-cats-could-be-manipulating-our-brains.jpg"> </div>
+{{/slick-slider}}
+```
 ## Installation
 
 * `git clone` this repository
