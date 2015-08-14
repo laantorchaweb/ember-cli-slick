@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-slick",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Slick Slider addon for Ember CLI.",
   "directories": {
     "doc": "doc",
@@ -11,7 +11,7 @@
     "build": "ember build",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "https://github.com/laantorchaweb/ember-cli-slick",
   "engines": {
     "node": ">= 0.10.0"
   },
