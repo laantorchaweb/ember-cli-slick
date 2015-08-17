@@ -30,4 +30,4 @@ export default Ember.Controller.extend({
 			console.log('afterChange', slick, currentSlide);
 		}	
 	}
-})
+});
