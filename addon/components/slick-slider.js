@@ -10,7 +10,7 @@ export default Ember.Component.extend({
   arrows: true,
   asNavFor: null,
   prevArrow: '<button type="button" class="slick-prev">Previous</button>',
-  nextArrow: '<button type="button" class="slick-prev">Next</button>',
+  nextArrow: '<button type="button" class="slick-next">Next</button>',
   centerMode: false,
   centerPadding: '50px',
   cssEase: 'ease',
@@ -47,7 +47,7 @@ export default Ember.Component.extend({
   _initializeSlick: Ember.on('didInsertElement', function() {
     var _this = this;
 
-    return this.$().slick({   
+    return this.$().slick({
       accessibility    : this.get('accessibility'),
       adaptativeHeight : this.get('adaptativeHeight'),
       autoplay         : this.get('autoplay'),

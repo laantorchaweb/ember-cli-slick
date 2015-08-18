@@ -1,0 +1,18 @@
+body {
+	background-color: #ccc;
+}
+
+h2 {
+	text-align: center;
+	color: #666;
+	font-family: sans-serif;
+}
+
+.slick-slider {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.slick-slider img {
+	min-width: 100%;
+}
