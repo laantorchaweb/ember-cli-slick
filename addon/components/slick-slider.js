@@ -4,7 +4,7 @@ import layout from '../templates/components/slick-slider';
 export default Ember.Component.extend({
   layout: layout,
   accessibility: true,
-  adaptativeHeight: true,
+  adaptiveHeight: true,
   autoplay: false,
   autoplaySpeed: 3000,
   arrows: true,
@@ -49,7 +49,7 @@ export default Ember.Component.extend({
 
     return this.$().slick({
       accessibility    : this.get('accessibility'),
-      adaptativeHeight : this.get('adaptativeHeight'),
+      adaptiveHeight   : this.get('adaptiveHeight'),
       autoplay         : this.get('autoplay'),
       autoplaySpeed    : this.get('autoplaySpeed'),
       arrows           : this.get('arrows'),
