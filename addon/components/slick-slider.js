@@ -107,7 +107,7 @@ export default Ember.Component.extend({
       _this.sendAction('setPosition', slick);
     })
     .on('swipe', function (slick, direction) {
-      _this.sendAction('swipe', slick, direction);
+      _this.sendAction('swiped', slick, direction);
     });
   })
 });
