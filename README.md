@@ -28,6 +28,7 @@ ember install:addon ember-cli-slick
 ```
 
 ### The Slick events will be send from the component to your controller or route
+(the swipe event will send a `swiped` in order to prevent naming issues)
 
 ```hbs
 {{#slick-slider	afterChange='afterChange'}}
