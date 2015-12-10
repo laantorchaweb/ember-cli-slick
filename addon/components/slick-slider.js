@@ -91,22 +91,22 @@ export default Ember.Component.extend({
       verticalSwiping  : this.get('verticalSwiping'),
       rtl              : this.get('rtl')
     })
-    .on('afterChange', function (slick, currentSlide) {
+    .on('afterChange', function ($event, slick, currentSlide) {
       _this.sendAction('afterChange', slick, currentSlide);
     })
-    .on('beforeChange', function (slick, currentSlide, nextSlide) {
+    .on('beforeChange', function ($event, slick, currentSlide, nextSlide) {
       _this.sendAction('beforeChange', slick, currentSlide, nextSlide);
     })
-    .on('edge', function (slick, direction) {
+    .on('edge', function ($event, slick, direction) {
       _this.sendAction('edge', slick, direction);
     })
-    .on('reInit', function (slick) {
+    .on('reInit', function ($event, slick) {
       _this.sendAction('reInit', slick);
     })
-    .on('setPosition', function (slick) {
+    .on('setPosition', function ($event, slick) {
       _this.sendAction('setPosition', slick);
     })
-    .on('swipe', function (slick, direction) {
+    .on('swipe', function ($event, slick, direction) {
       _this.sendAction('swiped', slick, direction);
     });
   })
