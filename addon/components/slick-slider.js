@@ -47,6 +47,10 @@ export default Ember.Component.extend({
   _initializeSlick: Ember.on('didInsertElement', function() {
     var _this = this;
 
+    Ember.run.scheduleOnce('actions', this.$(), function() {
+      _this.sendAction('slickInit', this[0]);
+    });
+
     return this.$().slick({
       accessibility    : this.get('accessibility'),
       adaptiveHeight   : this.get('adaptiveHeight'),
