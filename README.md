@@ -39,6 +39,18 @@ ember install:addon ember-cli-slick
 {{/slick-slider}}
 ```
 
+####Init Event
+A `slickInit` event may be bound from your template. This event is triggered after Ember's internal didInsertElement with a DOM reference to the newly created widget allowing direct manipulation of the DOM elements after creation.
+
+```hbs
+{{#slick-slider	slickInit="someInitAction"}}
+  <div class="box"> <img src="https://static2.businessinsider.com/image/4f3433986bb3f7b67a00003c/a-parasite-found-in-cats-could-be-manipulating-our-brains.jpg"> </div>
+  <div class="box"> <img src="https://static2.businessinsider.com/image/4f3433986bb3f7b67a00003c/a-parasite-found-in-cats-could-be-manipulating-our-brains.jpg"> </div>
+  <div class="box"> <img src="https://static2.businessinsider.com/image/4f3433986bb3f7b67a00003c/a-parasite-found-in-cats-could-be-manipulating-our-brains.jpg"> </div>
+  <div class="box"> <img src="https://static2.businessinsider.com/image/4f3433986bb3f7b67a00003c/a-parasite-found-in-cats-could-be-manipulating-our-brains.jpg"> </div>
+{{/slick-slider}}
+```
+
 ### The responsive configuration needs to be passed by a controller property
 
 ```hbs
@@ -80,6 +92,53 @@ export default Ember.Controller.extend({
 	]
 });
 ```
+
+### Customization
+This widget supports the full range of slick-slider configuration options. The full list with descriptions can be found at the slick-slider homepage: http://kenwheeler.github.io/slick/
+
+* accessibility
+* adaptiveHeight
+* autoplay
+* autoplaySpeed
+* arrows
+* asNavFor
+* appendArrows
+* prevArrow
+* nextArrow
+* centerMode
+* centerPadding
+* cssEase
+* customPaging
+* dots
+* draggable
+* fade
+* focusOnSelect
+* easing
+* edgeFriction
+* infinite
+* initialSlide
+* lazyLoad
+* mobileFirst
+* pauseOnHover
+* pauseOnDotsHover
+* respondTo
+* responsive
+* rows
+* slide
+* slidesPerRow
+* slidesToShow
+* slidesToScroll
+* speed
+* swipe
+* swipeToSlide
+* touchMove
+* touchThreshold
+* useCss
+* variableWidth
+* vertical
+* verticalSwiping
+* rtl
+
 
 ## Installation
 
