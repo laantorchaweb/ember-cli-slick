@@ -93,6 +93,57 @@ export default Ember.Controller.extend({
 });
 ```
 
+### Navigating between Slides from a Controller
+
+Assigning `currentSlide` to a controller property will cause two-way binding that allows you to keep track of the current slide, and to navigate between slides by setting the value of that bound property. This can be particularly useful when you have more than images in the slider, or if you need to to sync the currently visible slide with other things that are happening on the page, such as a list of instructions with a corresponding image.
+
+```hbs
+<h1>Current Slide: {{galleryCurrentSlide}}</h1>
+
+{{#slick-slider	currentSlide="galleryCurrentSlide"}}
+  <div class="box"> <img src="https://static2.businessinsider.com/image/4f3433986bb3f7b67a00003c/a-parasite-found-in-cats-could-be-manipulating-our-brains.jpg"> </div>
+  <div class="box"> <img src="https://static2.businessinsider.com/image/4f3433986bb3f7b67a00003c/a-parasite-found-in-cats-could-be-manipulating-our-brains.jpg"> </div>
+  <div class="box"> <img src="https://static2.businessinsider.com/image/4f3433986bb3f7b67a00003c/a-parasite-found-in-cats-could-be-manipulating-our-brains.jpg"> </div>
+  <div class="box"> <img src="https://static2.businessinsider.com/image/4f3433986bb3f7b67a00003c/a-parasite-found-in-cats-could-be-manipulating-our-brains.jpg"> </div>
+{{/slick-slider}}
+```
+
+```javascript
+import Ember from 'ember';
+
+export default Ember.Controller.extend({
+  galleryCurrentSlide: function() {
+    return 0;
+  }.property(),
+  
+  actions: {
+    /**
+     * This function will transition the slider
+     * to the specified slide
+     **/
+    gotoSlide: function(slide) {
+      this.set("galleryCurrentSlide", slide);
+    },
+    
+    /**
+     * Will transition to next Slide
+     **/
+    gotoNextSlide: function() {
+      this.set("galleryCurrentSlide", this.get("galleryCurrentSlide") + 1);
+    },
+    
+    /**
+     * Will transition to Previous Slide
+     **/
+    gotoPrevSlide: function() {
+      if(this.get("galleryCurrentSlide") > 0) {
+        this.set("galleryCurrentSlide", this.get("galleryCurrentSlide") - 1);
+      }
+    }
+  }
+});
+```
+
 ### Customization
 This widget supports the full range of slick-slider configuration options. The full list with descriptions can be found at the slick-slider homepage: http://kenwheeler.github.io/slick/
 
