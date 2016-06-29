@@ -43,6 +43,15 @@ export default Ember.Component.extend({
   vertical: false,
   verticalSwiping: false,
   rtl: false,
+  currentSlide: 0,
+
+  watchCurrentSlide: function() {
+    var currentSlide = this.get("currentSlide");
+    var slickCurrent = this.$().slick("slickCurrentSlide");
+    if(currentSlide !== slickCurrent) {
+      this.$().slick("slickGoTo", currentSlide);
+    }
+  }.observes("currentSlide"),
 
   _initializeSlick: Ember.on('didInsertElement', function() {
     var _this = this;
@@ -96,6 +105,7 @@ export default Ember.Component.extend({
       rtl              : this.get('rtl')
     })
     .on('afterChange', function ($event, slick, currentSlide) {
+      _this.set("currentSlide", currentSlide);
       _this.sendAction('afterChange', slick, currentSlide);
     })
     .on('beforeChange', function ($event, slick, currentSlide, nextSlide) {
