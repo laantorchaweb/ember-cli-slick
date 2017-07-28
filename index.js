@@ -1,6 +1,7 @@
-/* jshint node: true */
+/* eslint-env node */
 'use strict';
-var path = require('path');
+let path = require('path');
+let mergeTrees = require('broccoli-merge-trees');
 
 module.exports = {
   name: 'ember-cli-slick',
@@ -9,15 +10,24 @@ module.exports = {
     return path.join(__dirname, 'blueprints');
   },
 
+  treeForVendor: function(tree) {
+    let slickAssets = path.join(this.project.nodeModulesPath, 'slick-carousel');
+
+    tree = (tree) ? mergeTrees([ tree, slickAssets ]) : slickAssets;
+
+    return tree;
+  },
+
   included: function(app) {
     this._super.included(app);
-    this.app.import(app.bowerDirectory + '/slick-carousel/slick/slick.css');
-    this.app.import(app.bowerDirectory + '/slick-carousel/slick/slick.js');
-    this.app.import(app.bowerDirectory + '/slick-carousel/slick/slick-theme.css');
-    this.app.import(app.bowerDirectory + '/slick-carousel/slick/fonts/slick.ttf', { destDir: 'assets/fonts' });
-    this.app.import(app.bowerDirectory + '/slick-carousel/slick/fonts/slick.svg', { destDir: 'assets/fonts' });
-    this.app.import(app.bowerDirectory + '/slick-carousel/slick/fonts/slick.eot', { destDir: 'assets/fonts' });
-    this.app.import(app.bowerDirectory + '/slick-carousel/slick/fonts/slick.woff', { destDir: 'assets/fonts' });
-    this.app.import(app.bowerDirectory + '/slick-carousel/slick/ajax-loader.gif', { destDir: 'assets' });
+
+    this.app.import('vendor/slick/slick.css');
+    this.app.import('vendor/slick/slick.js');
+    this.app.import('vendor/slick/slick-theme.css');
+    this.app.import('vendor/slick/fonts/slick.ttf', { destDir: 'assets/fonts' });
+    this.app.import('vendor/slick/fonts/slick.svg', { destDir: 'assets/fonts' });
+    this.app.import('vendor/slick/fonts/slick.eot', { destDir: 'assets/fonts' });
+    this.app.import('vendor/slick/fonts/slick.woff', { destDir: 'assets/fonts' });
+    this.app.import('vendor/slick/ajax-loader.gif', { destDir: 'assets' });
   }
 };
