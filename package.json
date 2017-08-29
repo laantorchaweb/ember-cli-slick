@@ -45,8 +45,13 @@
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.6",
-    "ember-cli-htmlbars": "^1.1.0"
+    "ember-cli-htmlbars": "^1.1.0",
+    "broccoli-funnel": "^1.2.0",
+    "broccoli-merge-trees": "^2.0.0",
+    "exists-sync": "^0.0.4",
+    "fastboot-transform": "^0.1.1"
   },
+  
   "ember-addon": {
     "configPath": "tests/dummy/config"
   }
