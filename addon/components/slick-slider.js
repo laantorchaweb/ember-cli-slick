@@ -59,6 +59,7 @@ export default Ember.Component.extend({
       arrows           : this.get('arrows'),
       asNavFor         : this.get('asNavFor'),
       appendArrows     : this.get('appendArrows'),
+      appendDots       : this.get('appendDots'),
       prevArrow        : this.get('prevArrow'),
       nextArrow        : this.get('nextArrow'),
       centerMode       : this.get('centerMode'),
