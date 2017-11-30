@@ -48,6 +48,7 @@ module.exports = {
 
   included: function(app) {
     this._super.included(app);
+
     app.import(app.bowerDirectory + '/slick-carousel/slick/slick.css');
     app.import(app.bowerDirectory + '/slick-carousel/slick/slick-theme.css');
     app.import(app.bowerDirectory + '/slick-carousel/slick/fonts/slick.ttf', { destDir: 'assets/fonts' });

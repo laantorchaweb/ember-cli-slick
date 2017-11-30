@@ -103,6 +103,7 @@ This widget supports the full range of slick-slider configuration options. The f
 * arrows
 * asNavFor
 * appendArrows
+* appendDots
 * prevArrow
 * nextArrow
 * centerMode
