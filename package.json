@@ -54,6 +54,7 @@
     "broccoli-merge-trees": "^2.0.0",
     "exists-sync": "^0.0.4",
     "fastboot-transform": "^0.1.2"
+    "slick-carousel": "^1.8.1"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

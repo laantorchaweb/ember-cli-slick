@@ -3,6 +3,6 @@ module.exports = {
   },
 
   afterInstall: function() {
-    return this.addBowerPackageToProject('slick-carousel');
+    return this.addAddonToProject('slick-carousel');
   }
 };
