@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import { scheduleOnce } from '@ember/runloop';
+import Component from '@ember/component';
 import layout from '../templates/components/slick-slider';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout: layout,
   accessibility: true,
   adaptiveHeight: true,
@@ -27,7 +28,7 @@ export default Ember.Component.extend({
   pauseOnHover: true,
   pauseOnDotsHover: false,
   respondTo: 'window',
-  responsive: [],
+  responsive: null,
   rows: 1,
   slide: '',
   slidesPerRow: 1,
@@ -44,10 +45,22 @@ export default Ember.Component.extend({
   verticalSwiping: false,
   rtl: false,
 
-  _initializeSlick: Ember.on('didInsertElement', function() {
+  init() {
+    this._super(...arguments);
+
+    this.set('responsive', []);
+  },
+
+  didInsertElement() {
+    this._super(...arguments);
+
+    this._initializeSlick();
+  },
+
+  _initializeSlick() {
     var _this = this;
 
-    Ember.run.scheduleOnce('actions', this.$(), function() {
+    scheduleOnce('actions', this.$(), function() {
       _this.sendAction('slickInit', this[0]);
     });
 
@@ -109,10 +122,12 @@ export default Ember.Component.extend({
       _this.sendAction('reInit', slick);
     })
     .on('setPosition', function ($event, slick) {
-      _this.sendAction('setPosition', slick);
+      if(!_this.get('isDestroyed')) {
+        _this.sendAction('setPosition', slick);
+      }
     })
     .on('swipe', function ($event, slick, direction) {
       _this.sendAction('swiped', slick, direction);
     });
-  })
+  }
 });

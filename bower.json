@@ -1,6 +1,0 @@
-{
-  "name": "ember-cli-slick",
-  "dependencies": {
-    "slick-carousel": "~1.6.0"
-  }
-}
