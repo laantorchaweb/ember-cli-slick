@@ -129,5 +129,9 @@ export default Component.extend({
     .on('swipe', function ($event, slick, direction) {
       _this.sendAction('swiped', slick, direction);
     });
+  },
+  willDestroyElement(){
+    this._super(...arguments);
+    this.$().slick('unslick');
   }
 });
