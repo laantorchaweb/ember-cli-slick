@@ -1,8 +1,9 @@
 import { scheduleOnce } from '@ember/runloop';
 import Component from '@ember/component';
 import layout from '../templates/components/slick-slider';
+import { InvokeActionMixin } from 'ember-invoke-action';
 
-export default Component.extend({
+export default Component.extend(InvokeActionMixin, {
   layout: layout,
   accessibility: true,
   adaptiveHeight: true,
@@ -61,7 +62,7 @@ export default Component.extend({
     var _this = this;
 
     scheduleOnce('actions', this.$(), function() {
-      _this.sendAction('slickInit', this[0]);
+      _this.invokeAction('slickInit', this[0]);
     });
 
     return this.$().slick({
@@ -110,24 +111,24 @@ export default Component.extend({
       rtl              : this.get('rtl')
     })
     .on('afterChange', function ($event, slick, currentSlide) {
-      _this.sendAction('afterChange', slick, currentSlide);
+      _this.invokeAction('afterChange', slick, currentSlide);
     })
     .on('beforeChange', function ($event, slick, currentSlide, nextSlide) {
-      _this.sendAction('beforeChange', slick, currentSlide, nextSlide);
+      _this.invokeAction('beforeChange', slick, currentSlide, nextSlide);
     })
     .on('edge', function ($event, slick, direction) {
-      _this.sendAction('edge', slick, direction);
+      _this.invokeAction('edge', slick, direction);
     })
     .on('reInit', function ($event, slick) {
-      _this.sendAction('reInit', slick);
+      _this.invokeAction('reInit', slick);
     })
     .on('setPosition', function ($event, slick) {
       if(!_this.get('isDestroyed')) {
-        _this.sendAction('setPosition', slick);
+        _this.invokeAction('setPosition', slick);
       }
     })
     .on('swipe', function ($event, slick, direction) {
-      _this.sendAction('swiped', slick, direction);
+      _this.invokeAction('swiped', slick, direction);
     });
   },
   willDestroyElement(){
