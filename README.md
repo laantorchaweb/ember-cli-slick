@@ -16,7 +16,6 @@ Compatibility
 
 Installation
 ------------------------------------------------------------------------------
->>>>>>> 20a6797... message
 
 ```bash
 ember install ember-cli-slick
