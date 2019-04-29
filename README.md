@@ -5,6 +5,18 @@
 ### Installation
 
 From inside your ember-cli project, run the following:
+=======
+
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v2.18 or above
+* Ember CLI v2.13 or above
+
+
+Installation
+------------------------------------------------------------------------------
+>>>>>>> 20a6797... message
 
 ```bash
 ember install ember-cli-slick
@@ -39,6 +51,7 @@ ember install:addon ember-cli-slick
 {{/slick-slider}}
 ```
 
+<<<<<<< HEAD
 ####Init Event
 A `slickInit` event may be bound from your template. This event is triggered after Ember's internal didInsertElement with a DOM reference to the newly created widget allowing direct manipulation of the DOM elements after creation.
 
@@ -166,5 +179,6 @@ This widget supports the full range of slick-slider configuration options. The f
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
 
 ## License
+=======
 
 This project is licensed under the [MIT License](LICENSE.md).
