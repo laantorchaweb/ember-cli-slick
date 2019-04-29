@@ -1,9 +1,4 @@
 import Controller from '@ember/controller';
-import Ember from "ember";
-
-const {
-  Logger
-} = Ember;
 
 const BREAKPOINTS = [
   {
@@ -41,7 +36,7 @@ export default Controller.extend({
 
   actions: {
     afterChange: function(slick, currentSlide) {
-      Logger.log("afterChange", slick, currentSlide);
+      console.log("afterChange", slick, currentSlide);
     }
   }
 });
