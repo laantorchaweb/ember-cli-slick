@@ -2,11 +2,6 @@
 
 `ember-cli-slick` is a component that wraps the Slick Slider plugin functionality.
 
-### Installation
-
-From inside your ember-cli project, run the following:
-=======
-
 Compatibility
 ------------------------------------------------------------------------------
 
@@ -19,12 +14,6 @@ Installation
 
 ```bash
 ember install ember-cli-slick
-```
-
-#### Installation for ember-cli 0.1.5 - 0.2.2
-
-```bash
-ember install:addon ember-cli-slick
 ```
 
 ### slick-slider
@@ -50,8 +39,7 @@ ember install:addon ember-cli-slick
 {{/slick-slider}}
 ```
 
-<<<<<<< HEAD
-####Init Event
+#### Init Event
 A `slickInit` event may be bound from your template. This event is triggered after Ember's internal didInsertElement with a DOM reference to the newly created widget allowing direct manipulation of the DOM elements after creation.
 
 ```hbs
@@ -152,7 +140,7 @@ This widget supports the full range of slick-slider configuration options. The f
 * verticalSwiping
 * rtl
 
-## Installation
+## Repo
 
 * `git clone` this repository
 * `cd ember-cli-slick`
